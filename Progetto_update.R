@@ -220,25 +220,7 @@ mean(err)
 
 # Therefore, we can state the model is well performing other than easily interpretable.
 
-# ----------------------------------------------------------------------------------------------------------
 
-# AGE - vediamo 5 anni
-exp( 5 * coef( modello5 ) [ 2 ] ) # in 5 anni aumenta di 4.982934 velte
-# IC
-alpha = 0.05
-qalpha =  qnorm( 1 - alpha/2 )
-IC.sup = exp( 5 * coef( modello5 ) [ 2 ]  + qalpha * 5 * summary( modello5 )$coefficients[ 2, 2 ] )
-IC.inf = exp( 5 * coef( modello5 ) [ 2 ] - qalpha * 5 * summary( modello5 )$coefficients[ 2, 2 ] )
-c( IC.inf, IC.sup )
-
-# SEX
-exp( coef( modello5 ) [ 3 ] ) 
-# IC
-alpha = 0.05
-qalpha =  qnorm( 1 - alpha/2 )
-IC.sup = exp( coef( modello5 ) [ 3 ]  + qalpha * summary( modello5 )$coefficients[ 3, 2 ] )
-IC.inf = exp( coef( modello5 ) [ 3 ] - qalpha * summary( modello5 )$coefficients[ 3, 2 ] )
-c( IC.inf, IC.sup )
 
 
 
